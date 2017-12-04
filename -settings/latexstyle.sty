@@ -1,17 +1,40 @@
 % !TEX root = ../main.tex
 %
-% Style File for LaTeX Documents (scrreprt and scrartcl) by Jannik Beyerstedt
+% Style File for LaTeX Documents (scrreprt) by Jannik Beyerstedt
+% Version 0.2 2017-12-04
 %
-% Version 0.1 2017-10-31
+% Options: condensed:    make scrreprt chapters more like acrartcl
+%          defaultmarks: use default header and footer
 %
 \ProvidesPackage{-settings/latexstyle}
+
+\DeclareOption{condensed}{
+\@ifclassloaded{scrreprt}{%
+  \renewcommand\chapter{
+    \thispagestyle{plain}
+    \global\@topnum\z@
+    \@afterindentfalse
+    \secdef\@chapter\@schapter
+  }
+  \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
+  \renewcommand*{\chapterheadendvskip}{\vspace{0cm}}
+}{}
+}
+
+\newif\if@defaultmarks\@defaultmarksfalse
+\DeclareOption{defaultmarks}{
+  \@defaultmarkstrue
+}
+
+\ProcessOptions\relax
+
 
 \RequirePackage[a4paper]{geometry}
 \RequirePackage[utf8]{inputenc}     % Universal encoding
 
-\RequirePackage[ngerman]{babel}     % German spell checking
+\RequirePackage[ngerman]{babel}     % German translation
 \RequirePackage[T1]{fontenc}        % Font encoding
-\RequirePackage{lmodern}            % Use latin modern font
+\RequirePackage{lmodern}            % Use font latin modern
 \RequirePackage{url}                % Line break support in URL
 \RequirePackage{siunitx}            % SI-Unit support
 \RequirePackage[autostyle=true,german=quotes]{csquotes} % german quotes with \enquote{}
@@ -35,7 +58,7 @@
 %\RequirePackage{amssymb}
 
 \RequirePackage{graphicx}           % Include graphics to document
-\RequirePackage{subcaption}         % Multiple Pictures next to each other
+\RequirePackage{subcaption}         % Multiple pictures next to each other
 \RequirePackage[section]{placeins}  % Don’t allow float to next section
 
 \RequirePackage[numbers]{natbib}    % More citation styles
@@ -73,16 +96,20 @@
 %--------------------------------------------------------------------
 \newcommand{\headerTitle}[1]{\newcommand{\jb@headerTitle}{#1}}
 
+% use scrlayer-scrpage for custom header and footer
 % odd pages: l = inner, r = outer position     even pages: r = inner
-\RequirePackage[automark]{scrlayer-scrpage}     % Custom header and footer
-%\automark{chapter}                  % Use chapter heading for header
-%\automark*{section}                 % Also use section heading for header
+\if@defaultmarks
+	% leave default
+\else
+	\RequirePackage[automark]{scrlayer-scrpage}
+	%\automark{chapter}  % Use chapter heading for header
+	%\automark*{section} % Also use section heading for header
 
-\clearscrheadfoot
-\pagestyle{scrheadings}
-\ohead{\jb@headerTitle}
-\ihead{\rightmark}
-\rofoot[]{\pagemark}
+	\clearscrheadfoot \pagestyle{scrheadings}
+	\ohead{\jb@headerTitle}
+	\ihead{\rightmark}
+	\rofoot[]{\pagemark}
+\fi
 
 
 %--------------------------------------------------------------------

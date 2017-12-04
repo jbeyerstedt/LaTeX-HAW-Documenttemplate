@@ -10,25 +10,14 @@
     bibliography=totoc,
 ]{scrreprt}             % provides appendix and chapters
 
-% TODO: integrate these options in the style with a switch
-% condensed layout: no new pages and less space for chapters
-% \makeatletter
-% \renewcommand\chapter{\thispagestyle{plain}%
-% \global\@topnum\z@
-% \@afterindentfalse
-% \secdef\@chapter\@schapter}
-% \makeatother
-% \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
-% \renewcommand*{\chapterheadendvskip}{\vspace{0cm}}
-
-\usepackage{-settings/latexstyle}
+\usepackage[condensed, defaultmarks]{-settings/latexstyle}
 %\usepackage{tabularx}
 
 \input{-settings/settings}  % load the quite general settings
 \input{-settings/commands}  % load custom commands by Jannik Beyerstedt
 
 % MANUAL HYPHENATION (whitespace separated items)
-\hyphenation{Prescaler}
+\hyphenation{}
 
 % CUSTOM UNITS
 \sisetup{locale = DE}
