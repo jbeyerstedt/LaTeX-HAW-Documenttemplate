@@ -1,0 +1,70 @@
+% !TEX root = ../main.tex
+\graphicspath{{./images/}}
+
+% custom names for some things
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+\renewcommand{\lstlistingname}{Code}
+\renewcommand{\lstlistlistingname}{Code-Verzeichnis}
+
+% set custom maximum depth of TOC entries and chapter numbers
+%\setcounter{tocdepth}{3}
+%\setcounter{secnumdepth}{3}
+
+
+
+%--------------------------------------------------------------------
+% code listing style
+%--------------------------------------------------------------------
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+% MATLAB
+\usepackage[numbered,framed]{matlab-prettifier}
+\lstset{
+    literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {ß}{{\ss}}1,
+    language=Matlab,
+    style=Matlab-editor,            % for MATLAB code
+    tabsize=2,                      % sets default tabsize to 2 spaces
+    breaklines=true,                % sets automatic line breaking
+    captionpos=b,                   % sets the caption-position to bottom
+    %keywordstyle=\color{blue},      % keyword style
+    %commentstyle=\color{mygreen},   % comment style
+    %backgroundcolor=\color{white},
+    basicstyle=\ttfamily\footnotesize,
+    numbers=left,                   % where to put the line numbers
+    numberstyle=\tiny\color{mygray},% style for the line-numbers
+    stepnumber=1,                   % step between two line-numbers
+    showspaces=false,               % show spaces adding particular underscores
+    showstringspaces=false,         % underline spaces within strings
+    showtabs=false,                 % show tabs within strings as underscores
+    breakatwhitespace=false,        % automatic breaks only at whitespace
+    frame=single,                   % adds a frame around the code
+    rulecolor=\color{black},        % always use specific color as frame-color
+    escapeinside={\%*}{*)},         % for comments within the code
+    %title=\lstname,                 % show filename of \lstinputlisting
+}
+
+% C, C++
+% \lstset{
+%     literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {ß}{{\ss}}1,
+%     language=C,
+%     tabsize=2,                      % sets default tabsize to 2 spaces
+%     breaklines=true,                % sets automatic line breaking
+%     captionpos=b,                   % sets the caption-position to bottom
+%     keywordstyle=\color{blue},      % keyword style
+%     commentstyle=\color{mygreen},   % comment style
+%     backgroundcolor=\color{white},
+%     basicstyle=\ttfamily\footnotesize,
+%     numbers=left,                   % where to put the line numbers
+%     numberstyle=\tiny\color{mygray},% style for the line-numbers
+%     stepnumber=1,                   % step between two line-numbers
+%     showspaces=false,               % show spaces adding particular underscores
+%     showstringspaces=false,         % underline spaces within strings
+%     showtabs=false,                 % show tabs within strings as underscores
+%     breakatwhitespace=false,        % automatic breaks only at whitespace
+%     frame=single,                   % adds a frame around the code
+%     rulecolor=\color{black},        % always use specific color as frame-color
+%     escapeinside={\%*}{*)},         % for comments within the code
+%     %title=\lstname,                 % show filename of \lstinputlisting
+% }

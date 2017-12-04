@@ -1,0 +1,152 @@
+%--------------------------------------------------------------------
+% Rules for Bibtex Entries:
+% - concatenate aithors with 'and'
+% - set author names as last name, first name
+% - escape german umlauts with {\"a}, {\"o}, {\"u}, {\ss}, {\"A}, ...
+%--------------------------------------------------------------------
+
+%% -------------------- Papers --------------------
+@article{AEEE:2016,
+  title        = "Software Implementation of a Secure Firmware Update Solution in an {IoT} Context",
+  author       = "Kvarda, Lukas and Hnyk, Pavel and Vojtech, Lukas and Lokaj, Zdenk and Neruda, Marek and Zitta, Tomas",
+  year         = "2016",
+  journal      = "Advances in Electrical and Electronic Engineering",
+  volume       = "14",
+  number       = "4",
+  pages        = "389--396",
+  note         = "Online unter: \url{http://advances.utc.sk/index.php/AEEE/article/download/1858/1170}"
+}
+
+@techreport{AllegroSoft:2011,
+  key          = "AllegroSoft",
+  title        = "Implementing Secure Remote Firmware Updates",
+  institution  = {Allegro Software Development Corporation},
+  author       = "Shade, Loren~K.",
+  year         = "2011",
+  type         = "Conference Paper",
+  note         = "Online unter: \url{https://www.allegrosoft.com/wp-content/uploads/Secure-Firmware-Updates-Paper.pdf}"
+}
+
+@masterthesis{BA:2008,
+  author       = "Abrahamsson, David",
+  title        = "Security Enhanced Firmware Update Procedures in Embedded Systems",
+  school       = {Link\"opings universitet, Department of Computer and Information Science},
+  year         = "2008",
+  type         = "Masterarbeit",
+  note         = "Online unter: \url{http://www.diva-portal.org/smash/get/diva2:174606/fulltext01.pdf}"
+}
+
+@techreport{HCL:2014,
+  title        = "White Paper -- Secure Firmware Upgrade System",
+  institution  = {HCL Technologies},
+  author       = "Tomar, Shivani",
+  year         = "2014",
+  type         = "White Paper",
+  note         = "Online unter: \url{https://www.hcltech.com/sites/default/files/resources/whitepaper/files/2014/06/19/design_of_secure_firmware_upgrade_system.pdf}"
+}
+
+@techreport{IETF:2016,
+  title        = {{Report from the Internet of Things (IoT) Software Update (IoTSU) Workshop 2016}},
+  institution  = {Internet Engineering Task Force},
+  author       = "Tschofenig, Hannes and Farrell, Stephen",
+  year         = "2016",
+  number       = "draft-farrell-iotsu-workshop-01",
+  type         = {Internet-Draft},
+  publisher    = {Internet Engineering Task Force},
+  note         = "work in progress, Online unter: \url{https://datatracker.ietf.org/doc/html/draft-farrell-iotsu-workshop-01}"
+}
+
+@techreport{BSI-TR:2017,
+  key          = "BSI",
+  title        = {{Kryptographische Verfahren: Empfehlungen und Schl\"ussell\"angen}},
+  institution  = {{Bundesamt f\"ur Sicherheit in der Informationstechnik}},
+  year         = "2017",
+  number       = "BSI TR-02102-1",
+  address      = "Bonn, Deutschland",
+  type         = "Technische Richtlinie",
+  note         = "Version 2017-01, Online unter: \url{https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/TechnischeRichtlinien/TR02102/BSI-TR-02102.pdf}"
+}
+
+@misc{DJB:2012,
+  title        = "The security impact of a new cryptographic library",
+  author       = "Bernstein, Daniel~J. and Lange, Tanja and Schwabe, Peter",
+  year         = "2012",
+  note         = "Online unter: \url{https://cr.yp.to/highspeed/coolnacl-20120725.pdf}"
+}
+
+%% -------------------- Application Notes/ Manuals --------------------
+@manual{Atmel:2006,
+  key          = "Atmel",
+  title        = "Safe and Secure Firmware Upgrade for AT91SAM Microcontrollers",
+  organization = {Atmel},
+  year         = "2006",
+  number       = "doc6253",
+  address      = "San Jose, CA, USA",
+  note         = "Application Note doc6253, Online unter: \url{http://www.atmel.com/Images/doc6253.pdf}"
+}
+
+@manual{STM32-CM4-PM,
+  key          = "STM",
+  title        = "STM32F3, STM32F4 and STM32L4 Series Cortex-M4 programming manual",
+  organization = {STMicroelectronics},
+  year         = "2016",
+  number       = "PM0214",
+  address      = "Genf, Schweiz",
+  note         = "Programming Manual PM0214, DocID022708 Rev 5"
+}
+
+%% -------------------- Presentations --------------------
+@manual{Infineon:2016,
+  key          = "Infineon",
+  title        = "The right security for the {IoT}",
+  organization = {Infineon Technologies AG},
+  year         = "2016",
+  address      = "München, Deutschland",
+  note         = "Online unter: \url{http://www.infineon.com/dgdl/Infineon-The+right+security+for+the+IoT-ABR-v01_16-EN.pdf}"
+}
+
+@manual{mind:2012,
+  key          = "Mind",
+  title        = "Safe upgrade of embedded systems",
+  organization = {Essensium NV, Mind - Embedded Software Division},
+  year         = "2012",
+
+  note         = "Präsentationsfolien, Online unter: \url{http://mind.be/content/Presentation_Safe-Upgrade.pdf}"
+}
+% author       = "Vandecappelle, Arnout",
+
+%% -------------------- Patents --------------------
+% patent is no standard field in BibTeX, but but there is a fallback to misc
+@patent{Pat:Bosch:program,
+  title        = {{Verfahren zur Programmierung eines Steuergeräts eines Kraftfahrzeugs}},
+  organization = {Robert Bosch GmbH},
+  author       = "Schlottmann, Eckart and Schulz, Udo and Dang, Liem",
+  howpublished = "Patent: DE102015203776A1",
+  year         = "2016",
+  type         = "Patent",
+  note         = "Robert Bosch GmbH"
+}
+
+%% -------------------- RFCs --------------------
+@misc{rfc4108,
+  title        = {{Using Cryptographic Message Syntax (CMS) to Protect Firmware Packages}},
+  author       = "Housley, Russ",
+  year         = 2005,
+  number       = 4108,
+  series       = "Request for Comments",
+  howpublished = {RFC 4108},
+  publisher    = {RFC Editor},
+  doi          = {10.17487/rfc4108},
+  note         = "Online unter: \url{https://rfc-editor.org/rfc/rfc4108.txt}"
+}
+
+@techreport{ITU-T:2012,
+  key          = "ITU",
+  title        = {{Overview of the Internet of things}},
+  institution  = {International Telecommunication Union},
+  year         = "2012",
+  number       = "ITU-T Y.2060",
+  type         = {Recommendation},
+  publisher    = {International Telecommunication Union},
+  note         = "Online unter: \url{http://www.itu.int/ITU-T/recommendations/rec.aspx?rec=y.2060}"
+}

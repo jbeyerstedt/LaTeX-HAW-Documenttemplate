@@ -1,0 +1,43 @@
+% !TEX root = ../main.tex
+
+%--------------------------------------------------------------------
+% Abbreviations
+%--------------------------------------------------------------------
+\newcommand{\ca}{ca.\ }
+\newcommand{\zB}{z.\,B.\ }
+\newcommand{\uU}{u.\,U.\ }
+\newcommand{\usw}{usw.\ }
+\newcommand{\bzw}{bzw.\ }
+\newcommand{\bspw}{bspw.\ }
+\newcommand{\sog}{sog.\ }
+\newcommand{\vgl}{vgl.\ }
+\newcommand{\etc}{etc.\ }
+
+%--------------------------------------------------------------------
+% Custom Commands
+%--------------------------------------------------------------------
+
+% monospaced font for inline code sections
+\newcommand{\code}[1]{\texttt{#1}}
+
+% inline todo note
+\newcommand{\inlinetodo}[1]{\todo[inline,linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,size=\normalsize]{#1}}
+
+% set "C++" with better plus signs
+\newcommand{\cpp}{C\texttt{++} }
+
+% make something wider than text, e.g. listings
+% USAGE: \widetext{-1.25cm}{-1.5cm}{ %\lstinputlisting[]{path} }
+%   margin-offet:  left     right
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]%
+}{\end{list}}
+\newcommand{\widetext}[3]{\begin{changemargin}{#1}{#2} #3 \end{changemargin}}

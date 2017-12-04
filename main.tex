@@ -1,5 +1,106 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[12pt,
+    pagesize,
+    a4paper,
+    %twoside, BCOR5mm,
+    headsepline,        % separation line under page header
+    parskip=half,       % European style: more space between paragraphs
+    abstracton,         % set abstraction before TOC
+    listof=totoc,
+    %index=totoc,
+    bibliography=totoc,
+]{scrreprt}             % provides appendix and chapters
+
+% TODO: integrate these options in the style with a switch
+% condensed layout: no new pages and less space for chapters
+% \makeatletter
+% \renewcommand\chapter{\thispagestyle{plain}%
+% \global\@topnum\z@
+% \@afterindentfalse
+% \secdef\@chapter\@schapter}
+% \makeatother
+% \renewcommand*{\chapterheadstartvskip}{\vspace*{0.5cm}}
+% \renewcommand*{\chapterheadendvskip}{\vspace{0cm}}
+
+\usepackage{-settings/latexstyle}
+%\usepackage{tabularx}
+
+\input{-settings/settings}  % load the quite general settings
+\input{-settings/commands}  % load custom commands by Jannik Beyerstedt
+
+% MANUAL HYPHENATION (whitespace separated items)
+\hyphenation{Prescaler}
+
+% CUSTOM UNITS
+\sisetup{locale = DE}
+%\DeclareSIUnit \fps {fps}   % a custom unit (usage: \fps{25})
+
+% use a) ABBREVIATIONS
+%\nomenclature[UDP]{UDP}{User Datagram Protocol}
+
+% or b) GLOSSARY AND ACRONYMS
+% \newglossaryentry{CBC}{name=CBC, description={Cipher Block Chaining. Betriebsart des symmetrischen Kryptografie-Algorithmus AES}}
+% \newacronym{iot}{IoT}{Internet of Things}
+% \newacronym[see={[Glossary:]{ota_long}}]{ota}{OTA}{Over the Air\glsadd{ota_long}}
+
+
+%--------------------------------------------------------------------
+% DOCUMENT
+%--------------------------------------------------------------------
 \begin{document}
-(Type your content here.)
+
+%% ------------------------- TITLE PAGE -------------------------- %%
+\subject{Labor-/ Projektbericht}
+\title{MY DOCUMENT TEMPLATE}
+\headerTitle{title for header}
+\subtitle{some subtitle}
+\author{Jannik Beyerstedt}
+\date{\today}
+\publishers{\$vorlesung, WiSe/ SoSe~\$jahr\\
+Master Informations- und Kommunikationstechnik\\
+\vspace{4em} \small
+Hochschule für Angewandte Wissenschaften Hamburg\\
+Fakultät Technik und Informatik\\
+Department Informations- und Elektrotechnik\\
+\vspace{2em} \includegraphics[height = 25mm]{-settings/logo-haw-2017.png}}
+
+\maketitle
+\newpage
+
+%% --------------------------- ABSTRACT -------------------------- %%
+\begin{abstract}
+Your abstract.
+\end{abstract}
+
+%% ---------------------- TOC AND LISTS OF * --------------------- %%
+\tableofcontents
+%\newpage
+\listoftables
+\listoffigures
+\lstlistoflistings
+\printnomenclature
+
+\newpage
+
+%% ---------------------------- BODY ----------------------------- %%
+\input{chapters/10-introduction}
+\input{chapters/99-examples}
+
+
+%% ------------------------ BIBLIOGRAPHY ------------------------- %%
+\begin{flushleft}
+\bibliography{literature}
+\bibliographystyle{alpha}
+\end{flushleft}
+
+%% -------------------- GLOSSARY AND ACRONYMS -------------------- %%
+\printglossaries
+
+%% -------------------------- APPENDIX --------------------------- %%
+\appendix
+\chapter{Example Appendix}
+
+\widetext{-1.25cm}{-1.5cm}{
+\lstinputlisting[language=Matlab]{appendix/matlab-code.m}
+}
+
 \end{document}

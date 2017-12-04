@@ -1,0 +1,97 @@
+% !TEX root = ../main.tex
+%
+% Style File for LaTeX Documents (scrreprt and scrartcl) by Jannik Beyerstedt
+%
+% Version 0.1 2017-10-31
+%
+\ProvidesPackage{-settings/latexstyle}
+
+\RequirePackage[a4paper]{geometry}
+\RequirePackage[utf8]{inputenc}     % Universal encoding
+
+\RequirePackage[ngerman]{babel}     % German spell checking
+\RequirePackage[T1]{fontenc}        % Font encoding
+\RequirePackage{lmodern}            % Use latin modern font
+\RequirePackage{url}                % Line break support in URL
+\RequirePackage{siunitx}            % SI-Unit support
+\RequirePackage[autostyle=true,german=quotes]{csquotes} % german quotes with \enquote{}
+\RequirePackage{setspace}           % change line height with \onehalfspacing
+\onehalfspacing
+
+\RequirePackage{listings}           % Code listings
+\RequirePackage{scrhack}            % Fix KOMA-Script issues with listings
+\RequirePackage{xcolor}             % Colored text
+
+\RequirePackage{enumitem}           % Easier and more powerul enumerations
+
+\RequirePackage[intoc,german,prefix]{nomencl}   % Abbreviations with \nomenclature
+\setlength{\nomitemsep}{-\parsep}               % Smaller space between entries
+\makenomenclature
+\RequirePackage[toc,acronym]{glossaries}        % Glossary and list of acronyms
+\makeglossaries
+
+%\RequirePackage{amsmath}
+%\RequirePackage{amsfonts}
+%\RequirePackage{amssymb}
+
+\RequirePackage{graphicx}           % Include graphics to document
+\RequirePackage{subcaption}         % Multiple Pictures next to each other
+\RequirePackage[section]{placeins}  % Don’t allow float to next section
+
+\RequirePackage[numbers]{natbib}    % More citation styles
+\RequirePackage{bibgerm}            % Bibliopgraphy: german
+
+\parindent0pt
+
+\RequirePackage{pdfpages}           % Include whole pdf pages
+
+\RequirePackage{ifpdf}
+\ifpdf
+    %\RequirePackage[pdftex]{graphicx}   % Include graphics to document
+    \pdfcompresslevel=9
+    \RequirePackage[pdftex,             % Set up hyperref to use pdftex driver
+                    plainpages=false,   % Page i & 1 can be in same doc
+                    breaklinks=true,
+                    colorlinks=true,
+                    citecolor=black,
+                    linkcolor=black,
+                    urlcolor=blue,
+                    filecolor=blue,
+                    pdfusetitle,        % Auto-set title and author
+                    ]{hyperref}
+    %\usepackage{thumbpdf}
+\else
+    %\RequirePackage{graphicx}           % Include graphics to document
+    \RequirePackage{hyperref}           % Simplify the use of \href
+\fi
+
+\RequirePackage[colorinlistoftodos]{todonotes}  % Adds notes on marginpar (can lead to warnings!)
+
+
+%--------------------------------------------------------------------
+% custom header and footer
+%--------------------------------------------------------------------
+\newcommand{\headerTitle}[1]{\newcommand{\jb@headerTitle}{#1}}
+
+% odd pages: l = inner, r = outer position     even pages: r = inner
+\RequirePackage[automark]{scrlayer-scrpage}     % Custom header and footer
+%\automark{chapter}                  % Use chapter heading for header
+%\automark*{section}                 % Also use section heading for header
+
+\clearscrheadfoot
+\pagestyle{scrheadings}
+\ohead{\jb@headerTitle}
+\ihead{\rightmark}
+\rofoot[]{\pagemark}
+
+
+%--------------------------------------------------------------------
+% adjust line break parameters
+%--------------------------------------------------------------------
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000
+\vfuzz \hfuzz
+\raggedbottom
