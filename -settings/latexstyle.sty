@@ -98,16 +98,16 @@
 % use scrlayer-scrpage for custom header and footer
 % odd pages: l = inner, r = outer position     even pages: r = inner
 \if@defaultmarks
-	% leave default
+  % leave default
 \else
-	\RequirePackage[automark]{scrlayer-scrpage}
-	%\automark{chapter}  % Use chapter heading for header
-	%\automark*{section} % Also use section heading for header
+  \RequirePackage[automark]{scrlayer-scrpage}
+  %\automark{chapter}  % Use chapter heading for header
+  %\automark*{section} % Also use section heading for header
 
-	\clearscrheadfoot \pagestyle{scrheadings}
-	\ohead{\jb@headerTitle}
-	\ihead{\rightmark}
-	\rofoot[]{\pagemark}
+  \clearscrheadfoot \pagestyle{scrheadings}
+  \ohead{\jb@headerTitle}
+  \ihead{\rightmark}
+  \rofoot[]{\pagemark}
 \fi
 
 
