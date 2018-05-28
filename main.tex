@@ -5,16 +5,22 @@
     headsepline,        % separation line under page header
     parskip=half,       % European style: more space between paragraphs
     abstracton,         % set abstraction before TOC
-    listof=totoc,
+    %listof=totoc,
     %index=totoc,
     bibliography=totoc,
 ]{scrreprt}             % provides appendix and chapters
 
 \usepackage[condensed, defaultmarks]{-settings/latexstyle}
-%\usepackage{tabularx}
-
 \input{-settings/settings}  % load the quite general settings
 \input{-settings/commands}  % load custom commands by Jannik Beyerstedt
+
+\addbibresource{literature.bib}
+
+% CUSTOM SETTINGS
+% \setcounter{tocdepth}{3}
+% \setcounter{secnumdepth}{3}
+% \usepackage{tabularx}
+% \renewcommand{\arraystretch}{1.5}   % less crammed tables
 
 % MANUAL HYPHENATION (whitespace separated items)
 \hyphenation{}
@@ -43,7 +49,7 @@
 \headerTitle{title for header}
 \subtitle{some subtitle}
 \author{Jannik Beyerstedt}
-\date{\today}
+\date{TODO: date}
 \publishers{\$vorlesung, WiSe/ SoSe~\$jahr\\
 Master Informations- und Kommunikationstechnik\\
 \vspace{4em} \small
@@ -76,9 +82,9 @@ Your abstract.
 
 
 %% ------------------------ BIBLIOGRAPHY ------------------------- %%
+\clearpage
 \begin{flushleft}
-\bibliography{literature}
-\bibliographystyle{alpha}
+\printbibliography
 \end{flushleft}
 
 %% -------------------- GLOSSARY AND ACRONYMS -------------------- %%

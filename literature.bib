@@ -1,8 +1,12 @@
 %--------------------------------------------------------------------
-% Rules for Bibtex Entries:
-% - concatenate aithors with 'and'
-% - set author names as last name, first name
-% - escape german umlauts with {\"a}, {\"o}, {\"u}, {\ss}, {\"A}, ...
+% Rules for BibLaTeX (with biber backend) Entries:
+% - concatenate authors with 'and'
+%--------------------------------------------------------------------
+
+
+
+%--------------------------------------------------------------------
+% EXAMPLES
 %--------------------------------------------------------------------
 
 %% -------------------- Papers --------------------
@@ -18,7 +22,6 @@
 }
 
 @techreport{AllegroSoft:2011,
-  key          = "AllegroSoft",
   title        = "Implementing Secure Remote Firmware Updates",
   institution  = {Allegro Software Development Corporation},
   author       = "Shade, Loren~K.",
@@ -27,7 +30,7 @@
   note         = "Online unter: \url{https://www.allegrosoft.com/wp-content/uploads/Secure-Firmware-Updates-Paper.pdf}"
 }
 
-@masterthesis{BA:2008,
+masterthesis{BA:2008,
   author       = "Abrahamsson, David",
   title        = "Security Enhanced Firmware Update Procedures in Embedded Systems",
   school       = {Link\"opings universitet, Department of Computer and Information Science},
@@ -36,7 +39,7 @@
   note         = "Online unter: \url{http://www.diva-portal.org/smash/get/diva2:174606/fulltext01.pdf}"
 }
 
-@techreport{HCL:2014,
+techreport{HCL:2014,
   title        = "White Paper -- Secure Firmware Upgrade System",
   institution  = {HCL Technologies},
   author       = "Tomar, Shivani",
@@ -45,7 +48,7 @@
   note         = "Online unter: \url{https://www.hcltech.com/sites/default/files/resources/whitepaper/files/2014/06/19/design_of_secure_firmware_upgrade_system.pdf}"
 }
 
-@techreport{IETF:2016,
+techreport{IETF:2016,
   title        = {{Report from the Internet of Things (IoT) Software Update (IoTSU) Workshop 2016}},
   institution  = {Internet Engineering Task Force},
   author       = "Tschofenig, Hannes and Farrell, Stephen",
@@ -56,8 +59,8 @@
   note         = "work in progress, Online unter: \url{https://datatracker.ietf.org/doc/html/draft-farrell-iotsu-workshop-01}"
 }
 
-@techreport{BSI-TR:2017,
-  key          = "BSI",
+techreport{BSI-TR:2017,
+  shorthand    = {BSI-TR-2017},
   title        = {{Kryptographische Verfahren: Empfehlungen und Schl\"ussell\"angen}},
   institution  = {{Bundesamt f\"ur Sicherheit in der Informationstechnik}},
   year         = "2017",
@@ -67,7 +70,7 @@
   note         = "Version 2017-01, Online unter: \url{https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/TechnischeRichtlinien/TR02102/BSI-TR-02102.pdf}"
 }
 
-@misc{DJB:2012,
+misc{DJB:2012,
   title        = "The security impact of a new cryptographic library",
   author       = "Bernstein, Daniel~J. and Lange, Tanja and Schwabe, Peter",
   year         = "2012",
@@ -75,8 +78,7 @@
 }
 
 %% -------------------- Application Notes/ Manuals --------------------
-@manual{Atmel:2006,
-  key          = "Atmel",
+manual{Atmel:2006,
   title        = "Safe and Secure Firmware Upgrade for AT91SAM Microcontrollers",
   organization = {Atmel},
   year         = "2006",
@@ -85,8 +87,7 @@
   note         = "Application Note doc6253, Online unter: \url{http://www.atmel.com/Images/doc6253.pdf}"
 }
 
-@manual{STM32-CM4-PM,
-  key          = "STM",
+manual{STM32-CM4-PM,
   title        = "STM32F3, STM32F4 and STM32L4 Series Cortex-M4 programming manual",
   organization = {STMicroelectronics},
   year         = "2016",
@@ -96,8 +97,7 @@
 }
 
 %% -------------------- Presentations --------------------
-@manual{Infineon:2016,
-  key          = "Infineon",
+manual{Infineon:2016,
   title        = "The right security for the {IoT}",
   organization = {Infineon Technologies AG},
   year         = "2016",
@@ -105,8 +105,7 @@
   note         = "Online unter: \url{http://www.infineon.com/dgdl/Infineon-The+right+security+for+the+IoT-ABR-v01_16-EN.pdf}"
 }
 
-@manual{mind:2012,
-  key          = "Mind",
+manual{mind:2012,
   title        = "Safe upgrade of embedded systems",
   organization = {Essensium NV, Mind - Embedded Software Division},
   year         = "2012",
@@ -117,7 +116,7 @@
 
 %% -------------------- Patents --------------------
 % patent is no standard field in BibTeX, but but there is a fallback to misc
-@patent{Pat:Bosch:program,
+patent{Pat:Bosch:program,
   title        = {{Verfahren zur Programmierung eines Steuergeräts eines Kraftfahrzeugs}},
   organization = {Robert Bosch GmbH},
   author       = "Schlottmann, Eckart and Schulz, Udo and Dang, Liem",
@@ -128,7 +127,8 @@
 }
 
 %% -------------------- RFCs --------------------
-@misc{rfc4108,
+misc{rfc4108,
+  shorthand    = {RFC4108},
   title        = {{Using Cryptographic Message Syntax (CMS) to Protect Firmware Packages}},
   author       = "Housley, Russ",
   year         = 2005,
@@ -140,8 +140,7 @@
   note         = "Online unter: \url{https://rfc-editor.org/rfc/rfc4108.txt}"
 }
 
-@techreport{ITU-T:2012,
-  key          = "ITU",
+techreport{ITU-T:2012,
   title        = {{Overview of the Internet of things}},
   institution  = {International Telecommunication Union},
   year         = "2012",
